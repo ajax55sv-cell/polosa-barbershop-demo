@@ -1,0 +1,87 @@
+/* Hallmark tokens · ПОЛОСА · custom theme "porcelain tile, enamel sign, pole red"
+ * Every colour, font, space, size, easing and duration on the page comes from here.
+ */
+:root {
+  /* paper and ink: cold porcelain tile + navy-black ink */
+  --color-paper:        oklch(95% 0.012 235);
+  --color-paper-2:      oklch(91% 0.018 235);
+  --color-ticket:       oklch(98% 0.008 235);
+  --color-rule:         oklch(78% 0.022 240);
+  --color-muted:        oklch(44% 0.035 250);
+  --color-ink:          oklch(21% 0.045 255);
+  --color-ink-2:        oklch(36% 0.040 255);
+
+  /* the one accent: pole red */
+  --color-accent:       oklch(52% 0.20 27);
+  --color-accent-ink:   oklch(97% 0.010 235);
+  --color-focus:        oklch(52% 0.19 258);
+
+  /* the dark enamel board (price list, booking) */
+  --color-board:        oklch(24% 0.050 255);
+  --color-board-ink:    oklch(94% 0.012 235);
+  --color-board-muted:  oklch(76% 0.030 245);
+  --color-board-rule:   oklch(46% 0.050 255);
+  --color-board-focus:  oklch(82% 0.130 235);
+
+  /* barber pole: red / white / blue, used only on the pole and the stripe band */
+  --color-pole-red:     var(--color-accent);
+  --color-pole-white:   oklch(97% 0.010 235);
+  --color-pole-blue:    oklch(42% 0.140 258);
+  --color-metal-hi:     oklch(88% 0.012 240);
+  --color-metal:        oklch(66% 0.020 245);
+  --color-metal-lo:     oklch(40% 0.030 250);
+
+  /* type */
+  --font-display: "Oswald", "Oswald Fallback", "Arial Narrow", sans-serif;
+  --font-body:    "IBM Plex Sans", "Plex Fallback", Arial, sans-serif;
+  --font-figures: "IBM Plex Mono", ui-monospace, "Courier New", monospace;
+
+  --text-sm:        0.875rem;
+  --text-base:      1rem;
+  --text-md:        1.25rem;
+  --text-display-s: clamp(2.25rem, 4.5vw + 0.75rem, 3.75rem);
+  --text-display:   clamp(2.25rem, 8vw + 0.25rem, 6rem);
+
+  /* space: 4pt scale */
+  --space-2xs: 0.25rem;
+  --space-xs:  0.5rem;
+  --space-sm:  0.75rem;
+  --space-md:  1rem;
+  --space-lg:  1.5rem;
+  --space-xl:  2.5rem;
+  --space-2xl: 4rem;
+  --space-3xl: 6rem;
+
+  /* shape */
+  --radius-sm:   2px;
+  --radius-cap:  6px;
+  --rule-thin:   1px;
+  --rule-mid:    2px;
+  --rule-thick:  4px;
+
+  /* layout */
+  --wrap:        80rem;
+  --page-gutter: clamp(1rem, 4vw, 2.5rem);
+  --stub-w:      17rem;
+
+  /* pole geometry: stripe period along a 45deg gradient is 4 segments; vertical period = that x sqrt(2) */
+  --pole-w:      clamp(3.25rem, 11vw, 8.5rem);
+  --pole-dip:    5rem;
+  --stripe-seg:  14px;
+  --pole-period: calc(var(--stripe-seg) * 4 * 1.41421356);
+  --pole-travel: calc(var(--pole-period) * 8);
+
+  /* motion */
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in:     cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-micro:   120ms;
+  --dur-short:   220ms;
+  --dur-long:    420ms;
+  --dur-pole:    2600ms;
+
+  /* z-index */
+  --z-base:   1;
+  --z-raised: 10;
+  --z-sticky: 200;
+}

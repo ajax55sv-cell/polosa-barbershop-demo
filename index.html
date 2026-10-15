@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Полоса - барбершоп (демо)</title>
+  <meta name="description" content="Демо-страница барбершопа «Полоса»: мужские стрижки, оформление бороды и бритьё опасной бритвой. Запись онлайн.">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500&family=Oswald:wght@500;700&display=swap">
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="style.css">
+  <!--
+    ДЕМО: все данные вымышлены.
+    Название «Полоса», адрес, телефон, почта, Telegram, цены, длительности, имена мастеров - выдуманные.
+    Фото интерьера и мастера Артёма сгенерированы нейросетью, фото двух других мастеров - пока слоты.
+    Форма записи ничего не отправляет (см. script.js).
+  -->
+</head>
+<body>
+  <a class="skip" href="#main">К содержимому</a>
+
+  <aside class="demo" aria-label="О демо-версии">
+    <p class="wrap demo__text"><strong>Демо-страница.</strong> Барбершоп, мастера, цены и контакты вымышлены, фото сгенерированы нейросетью.</p>
+  </aside>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <picture class="hero__bg" aria-hidden="true">
+        <source media="(max-width: 40rem)" srcset="assets/hero-m.webp">
+        <img src="assets/hero.webp" alt="" width="1920" height="1080" fetchpriority="high">
+      </picture>
+      <header class="wrap nav">
+        <a class="wordmark" href="#top" aria-label="Полоса, в начало страницы">
+          <span class="wordmark__mark" aria-hidden="true"></span>Полоса
+        </a>
+        <a class="btn btn--outline" href="#zapis">Записаться</a>
+      </header>
+      <div class="wrap hero__grid">
+        <div class="hero__copy">
+          <h1 class="display">Борода, стрижка, горячее полотенце.</h1>
+          <p class="lede">Мужские стрижки, оформление бороды и бритьё опасной бритвой. Запишитесь на удобное время: к назначенному часу кресло будет свободно.</p>
+          <div class="hero__actions">
+            <a class="btn btn--solid" href="#zapis">Записаться</a>
+            <a class="hero__phone" href="tel:+79000000000">+7&nbsp;900&nbsp;000-00-00</a>
+          </div>
+        </div>
+        <dl class="hero__facts">
+          <div><dt>Часы работы</dt><dd>Ежедневно, 10:00-21:00</dd></div>
+          <div><dt>Адрес</dt><dd>Москва, ул.&nbsp;Образцовая, 12</dd></div>
+        </dl>
+        <div class="pole" aria-hidden="true">
+          <div class="pole__cap"></div>
+          <div class="pole__glass"><div class="pole__stripes"></div></div>
+          <div class="pole__cap"></div>
+        </div>
+      </div>
+    </section>
+    <div class="stripe-band stripe-band--hero" aria-hidden="true"></div>
+
+    <section class="board" id="price" aria-labelledby="price-title">
+      <div class="wrap">
+        <div class="board__head">
+          <h2 class="h2" id="price-title">Прайс</h2>
+          <p class="board__note">Цена указана за одного мастера. Если пришли и за стрижкой, и за бородой, берите обе услуги сразу: так дешевле, чем по отдельности.</p>
+        </div>
+        <ul class="menu">
+          <li class="menu__row">
+            <span class="menu__name">Мужская стрижка</span><span class="menu__dots" aria-hidden="true"></span><span class="menu__price figures">1&nbsp;800&nbsp;₽</span>
+            <span class="menu__desc">Мытьё головы, стрижка ножницами или машинкой, укладка.</span><span class="menu__time">60&nbsp;мин</span>
+          </li>
+          <li class="menu__row">
+            <span class="menu__name">Стрижка машинкой</span><span class="menu__dots" aria-hidden="true"></span><span class="menu__price figures">1&nbsp;200&nbsp;₽</span>
+            <span class="menu__desc">Одна или две насадки, окантовка. Без мытья головы.</span><span class="menu__time">30&nbsp;мин</span>
+          </li>
+          <li class="menu__row">
+            <span class="menu__name">Оформление бороды</span><span class="menu__dots" aria-hidden="true"></span><span class="menu__price figures">1&nbsp;400&nbsp;₽</span>
+            <span class="menu__desc">Форма, подравнивание, масло и горячее полотенце.</span><span class="menu__time">40&nbsp;мин</span>
+          </li>
+          <li class="menu__row">
+            <span class="menu__name">Королевское бритьё</span><span class="menu__dots" aria-hidden="true"></span><span class="menu__price figures">1&nbsp;900&nbsp;₽</span>
+            <span class="menu__desc">Опасная бритва, два горячих полотенца, бальзам после бритья.</span><span class="menu__time">45&nbsp;мин</span>
+          </li>
+          <li class="menu__row">
+            <span class="menu__name">Стрижка и борода</span><span class="menu__dots" aria-hidden="true"></span><span class="menu__price figures">3&nbsp;000&nbsp;₽</span>
+            <span class="menu__desc">Обе услуги за один визит к одному мастеру.</span><span class="menu__time">90&nbsp;мин</span>
+          </li>
+          <li class="menu__row">
+            <span class="menu__name">Отец и сын</span><span class="menu__dots" aria-hidden="true"></span><span class="menu__price figures">2&nbsp;800&nbsp;₽</span>
+            <span class="menu__desc">Две стрижки подряд, сыну до 12 лет.</span><span class="menu__time">75&nbsp;мин</span>
+          </li>
+          <li class="menu__row">
+            <span class="menu__name">Тонирование седины</span><span class="menu__dots" aria-hidden="true"></span><span class="menu__price figures">1&nbsp;000&nbsp;₽</span>
+            <span class="menu__desc">Мягкое тонирование головы или бороды без резкого цвета.</span><span class="menu__time">30&nbsp;мин</span>
+          </li>
+        </ul>
+        <div class="board__cta"><a class="btn btn--paper" href="#zapis">Записаться</a></div>
+      </div>
+    </section>
+
+    <section class="visit" id="visit" aria-labelledby="visit-title">
+      <div class="wrap">
+        <h2 class="h2" id="visit-title">Как проходит визит</h2>
+        <ol class="steps">
+          <li class="step">
+            <span class="step__n" aria-hidden="true">1</span>
+            <h3>Запись</h3>
+            <p>Выбираете услугу, мастера и время. Администратор подтверждает запись звонком.</p>
+          </li>
+          <li class="step">
+            <span class="step__n" aria-hidden="true">2</span>
+            <h3>Разговор</h3>
+            <p>Мастер уточняет, что нужно: длина, форма, насколько коротко. Можно показать фото.</p>
+          </li>
+          <li class="step">
+            <span class="step__n" aria-hidden="true">3</span>
+            <h3>Кресло</h3>
+            <p>Мытьё, стрижка или бритьё. Горячее полотенце для бороды и шеи.</p>
+          </li>
+          <li class="step">
+            <span class="step__n" aria-hidden="true">4</span>
+            <h3>Финиш</h3>
+            <p>Укладка, зеркало, оплата на месте. Следующий визит можно записать сразу.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="masters" id="masters" aria-labelledby="masters-title">
+      <div class="wrap">
+        <h2 class="h2" id="masters-title">Мастера</h2>
+        <p class="section-note">Три мастера, у каждого свой почерк. Не знаете, к кому идти, выберите в форме «любой свободный», и администратор подскажет.</p>
+        <div class="masters__grid">
+          <article class="master master--a">
+            <div class="master__photo">
+              <img src="assets/master-artem.webp" alt="Артём, мастер барбершопа, в тёмно-синем фартуке" width="900" height="1200" loading="lazy">
+            </div>
+            <h3>Артём</h3>
+            <p>Классические и деловые стрижки ножницами.</p>
+            <a class="link" href="#zapis" data-master="Артём">Записаться к Артёму</a>
+          </article>
+          <article class="master master--b">
+            <div class="master__photo" role="img" aria-label="Здесь будет фото мастера Тимура">
+              <span class="master__initial" aria-hidden="true">Т</span><span class="master__ph">Место для фото</span>
+            </div>
+            <h3>Тимур</h3>
+            <p>Борода, опасная бритва, уход за кожей.</p>
+            <a class="link" href="#zapis" data-master="Тимур">Записаться к Тимуру</a>
+          </article>
+          <article class="master master--c">
+            <div class="master__photo" role="img" aria-label="Здесь будет фото мастера Дениса">
+              <span class="master__initial" aria-hidden="true">Д</span><span class="master__ph">Место для фото</span>
+            </div>
+            <h3>Денис</h3>
+            <p>Фейды, контрасты, короткие стрижки машинкой.</p>
+            <a class="link" href="#zapis" data-master="Денис">Записаться к Денису</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="book" id="zapis" aria-labelledby="book-title">
+      <div class="wrap">
+        <div class="ticket">
+          <div class="ticket__main">
+            <h2 class="h2" id="book-title">Запись на стрижку или бритьё</h2>
+            <p>Оставьте заявку, и администратор позвонит, чтобы подтвердить время.</p>
+
+            <form class="form" id="book-form" novalidate>
+              <div class="field">
+                <label for="f-name">Имя</label>
+                <input id="f-name" name="name" type="text" autocomplete="given-name" required aria-describedby="e-name">
+                <p class="field__error" id="e-name" aria-live="polite"></p>
+              </div>
+              <div class="field">
+                <label for="f-phone">Телефон</label>
+                <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 900 000-00-00" required aria-describedby="e-phone">
+                <p class="field__error" id="e-phone" aria-live="polite"></p>
+              </div>
+              <div class="field">
+                <label for="f-service">Услуга</label>
+                <select id="f-service" name="service">
+                  <option>Мужская стрижка</option>
+                  <option>Стрижка машинкой</option>
+                  <option>Оформление бороды</option>
+                  <option>Королевское бритьё</option>
+                  <option>Стрижка и борода</option>
+                  <option>Отец и сын</option>
+                  <option>Тонирование седины</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="f-master">Мастер</label>
+                <select id="f-master" name="master">
+                  <option>Любой свободный</option>
+                  <option>Артём</option>
+                  <option>Тимур</option>
+                  <option>Денис</option>
+                </select>
+              </div>
+              <div class="field field--wide">
+                <label for="f-when">Когда удобно</label>
+                <input id="f-when" name="when" type="datetime-local">
+              </div>
+              <button class="btn btn--solid form__submit" type="submit">Записаться</button>
+            </form>
+
+            <div class="done" id="book-done" tabindex="-1" hidden>
+              <h3>Заявка принята</h3>
+              <p>Администратор позвонит на номер <span class="tnum" id="done-phone"></span> и подтвердит время.</p>
+              <button class="btn btn--outline" type="button" id="book-again">Записать ещё одного</button>
+            </div>
+          </div>
+
+          <aside class="ticket__stub">
+            <h3 class="visually-hidden">Как нас найти</h3>
+            <dl>
+              <div><dt>Адрес</dt><dd>Москва, ул.&nbsp;Образцовая, 12. Вход со двора, у двери красно-синяя полоса.</dd></div>
+              <div><dt>Часы работы</dt><dd>Ежедневно, 10:00-21:00</dd></div>
+              <div><dt>Телефон</dt><dd><a class="ticket__phone" href="tel:+79000000000">+7&nbsp;900&nbsp;000-00-00</a></dd></div>
+              <div><dt>Почта</dt><dd><a class="ticket__link" href="mailto:hello@polosa.example">hello@polosa.example</a></dd></div>
+              <div><dt>Telegram</dt><dd>@polosa_demo</dd></div>
+            </dl>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="stripe-band" aria-hidden="true"></div>
+  <footer class="foot">
+    <div class="wrap">
+      <p class="foot__mark">Полоса</p>
+      <p class="foot__tag">Барбершоп. Запись онлайн.</p>
+      <nav class="foot__links" aria-label="Разделы страницы">
+        <a href="#price">Прайс</a>
+        <a href="#visit">Визит</a>
+        <a href="#masters">Мастера</a>
+        <a href="#zapis">Запись</a>
+      </nav>
+      <div class="foot__meta">
+        <p>Москва, ул. Образцовая, 12</p>
+        <p>+7 900 000-00-00, hello@polosa.example, Telegram @polosa_demo</p>
+        <p>Демо-страница: все данные вымышлены, фото сгенерированы нейросетью.</p>
+        <p>© Полоса, 2026</p>
+      </div>
+    </div>
+  </footer>
+
+  <aside class="sticky" id="sticky" aria-label="Быстрая запись">
+    <span>Запись онлайн</span>
+    <a class="btn btn--solid" href="#zapis">Записаться</a>
+  </aside>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
